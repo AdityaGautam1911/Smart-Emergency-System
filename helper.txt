@@ -1,0 +1,33 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Alert</title>
+    <script src="/socket.io/socket.io.js"></script> <!-- Correct path to socket.io -->
+</head>
+
+<body>
+    <h1>Arduino Alert Dashboard</h1>
+    <p>Waiting for alerts...</p>
+
+    <script>
+        const socket = io();
+
+        // Listen for alert event from server
+        socket.on("alert", (message) => {
+            alert(message); // Show popup alert
+            console.log("Alert received:", message); // Log for debugging
+        });
+    </script>
+</body>
+
+</html>

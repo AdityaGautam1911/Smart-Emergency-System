@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Alert Dashboard</title>
+    <script src="/socket.io/socket.io.js"></script> <!-- Correct path to socket.io -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Add Chart.js CDN -->
+</head>
+
+<body>
+    <h1>Arduino Alert Dashboard</h1>
+    <p>Waiting for alerts...</p>
+
+    <!-- Display Random Charts -->
+    <div>
+        <h2>Gas Concentration (Daily)</h2>
+        <canvas id="gasConcentrationChart"></canvas>
+    </div>
+
+    <div>
+        <h2>Step Count (Weekly)</h2>
+        <canvas id="stepCountChart"></canvas>
+    </div>
+
+    <div>
+        <h2>Dangerous Areas Visited (Monthly)</h2>
+        <canvas id="dangerousAreasChart"></canvas>
+    </div>
+
+    <script>
+        // Create Socket connection
+        const socket = io();
+
+        // Listen for alert event from server
+        socket.on("alert", (message) => {
+            alert(message); // Show popup alert
+            console.log("Alert received:", message); // Log for debugging
+        });
+
+        // Create Random Data for Charts
+        function generateRandomData(labels, count = 7) {
+            return Array.from({ length: count }, () => Math.floor(Math.random() * 100) + 1);
+        }
+
+        // Gas Concentration Chart (Daily)
+        const gasConcentrationCtx = document.getElementById('gasConcentrationChart').getContext('2d');
+        const gasConcentrationChart = new Chart(gasConcentrationCtx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Gas Concentration (PPM)',
+                    data: generateRandomData(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']),
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    fill: false,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Step Count Chart (Weekly)
+        const stepCountCtx = document.getElementById('stepCountChart').getContext('2d');
+        const stepCountChart = new Chart(stepCountCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Step Count',
+                    data: generateRandomData(['Week 1', 'Week 2', 'Week 3', 'Week 4']),
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Dangerous Areas Chart (Monthly)
+        const dangerousAreasCtx = document.getElementById('dangerousAreasChart').getContext('2d');
+        const dangerousAreasChart = new Chart(dangerousAreasCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Area 1', 'Area 2', 'Area 3', 'Area 4'],
+                datasets: [{
+                    label: 'Dangerous Areas Visited',
+                    data: generateRandomData(['Area 1', 'Area 2', 'Area 3', 'Area 4'], 4),
+                    backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)'],
+                    borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)'],
+                    borderWidth: 1
+                }]
+            }
+        });
+    </script>
+</body>
+
+</html>
