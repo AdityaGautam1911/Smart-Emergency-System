@@ -1,0 +1,19 @@
+{
+  "name": "pushbutton_email",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000S\u0000m\u0000a\u0000r\u0000t\u0000-\u0000E\u0000m\u0000e\u0000r\u0000g\u0000e\u0000n\u0000c\u0000y\u0000-\u0000S\u0000y\u0000s\u0000t\u0000e\u0000m\u0000\r\u0000 \u0000",
+  "main": "sendHelpEmail.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "http": "^0.0.1-security",
+    "nodemailer": "^6.9.16",
+    "serialport": "^12.0.0",
+    "socket.io": "^4.8.1"
+  }
+}
