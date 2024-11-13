@@ -10,8 +10,8 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-const port = new SerialPort({ path: "COM11", baudRate: 9600 });
-const parser = port.pipe(new ReadlineParser({ delimiter: "\n" }));
+// const port = new SerialPort({ path: "COM11", baudRate: 9600 });
+// const parser = port.pipe(new ReadlineParser({ delimiter: "\n" }));
 
 let emailSent = false;
 const debounceTimeout = 5000;
