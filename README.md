@@ -20,7 +20,7 @@ An Arduino-based system for real-time alerts and environmental monitoring, provi
 ## Project Setup
 
 ### Hardware
-- Arduino board with button, photoresistor, and gas sensor
+- Arduino board with button, photoresistor,temperature sensor  and gas sensor
 
 ### Software
 - Arduino IDE for code upload
@@ -30,15 +30,14 @@ An Arduino-based system for real-time alerts and environmental monitoring, provi
 ## Running the Project
 
 1. **Install Dependencies**
-   ```bash
-   npm i
-   Start the Email Notification Script
-bashCopynode sendHelpEmail.js
+   npm i 
+   Start the Email Notification Script 
+   run sendHelpEmail.js
 
 Open the Dashboard
 
-Access the dashboard by opening http://localhost:3000 in your web browser 
-Ensure Wi-Fi connectivity for seamless operation
+Access the dashboard by opening http://localhost:3000 in your web browser  
+Ensure Wi-Fi connectivity for seamless operation 
 
 
 
@@ -50,6 +49,18 @@ Add motion detection and GPS tracking for enhanced monitoring
 Screenshots
 
 Arduino Setup 
+![image](https://github.com/user-attachments/assets/a0b1f370-789a-450d-8219-5185c749b6f6)
+
+![image](https://github.com/user-attachments/assets/e71eb46a-e952-4379-bebc-b706273c103d)
+
+
 Website Dashboard 
+![pic2](https://github.com/user-attachments/assets/b891cfb0-053e-41fb-9f75-31b07a7fce4c)
+
+
 Email Alert Screenshot 
+![image](https://github.com/user-attachments/assets/b8d16077-5e78-46c7-a535-d8b49e767eba)
+
+
 Alert Popup with Console Logs 
+![pic1](https://github.com/user-attachments/assets/462fc095-15a4-4269-94f3-835db78ef5c7)
