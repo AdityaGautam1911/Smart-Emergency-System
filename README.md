@@ -37,19 +37,19 @@ bashCopynode sendHelpEmail.js
 
 Open the Dashboard
 
-Access the dashboard by opening http://localhost:3000 in your web browser
+Access the dashboard by opening http://localhost:3000 in your web browser 
 Ensure Wi-Fi connectivity for seamless operation
 
 
 
 Additional Ideas
 
-Expand alerts to SMS or app notifications
-Add motion detection and GPS tracking for enhanced monitoring
+Expand alerts to SMS or app notifications 
+Add motion detection and GPS tracking for enhanced monitoring 
 
 Screenshots
 
-Arduino Setup
-Website Dashboard
-Email Alert Screenshot
-Alert Popup with Console Logs
+Arduino Setup 
+Website Dashboard 
+Email Alert Screenshot 
+Alert Popup with Console Logs 
