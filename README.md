@@ -53,6 +53,9 @@ Arduino Setup
 
 ![image](https://github.com/user-attachments/assets/e71eb46a-e952-4379-bebc-b706273c103d)
 
+LCD Screen Setup
+![image](https://github.com/user-attachments/assets/51c24379-2986-4196-b64b-f2f32ac858a6)
+
 
 Website Dashboard 
 ![pic2](https://github.com/user-attachments/assets/b891cfb0-053e-41fb-9f75-31b07a7fce4c)
